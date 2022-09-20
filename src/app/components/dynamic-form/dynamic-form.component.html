@@ -1,0 +1,8 @@
+<form (ngSubmit)="onSubmit(formArrayWrapper)">
+  <app-dynamic-form-group
+    *ngFor="let formGroupWrapper of formArrayWrapper.formGroupWrappers"
+    [formGroupWrapper]="formGroupWrapper"
+    [isFormArrayValid]="formArrayWrapper.formArray.valid"
+  >
+  </app-dynamic-form-group>
+</form>

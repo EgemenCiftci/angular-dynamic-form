@@ -1,0 +1,9 @@
+<fieldset>
+  <legend>{{ formGroupWrapper.label }}</legend>
+  <app-dynamic-form-control
+    *ngFor="let formControlWrapper of formGroupWrapper.formControlWrappers"
+    [formControlWrapper]="formControlWrapper"
+    [isFormArrayValid]="isFormArrayValid"
+    [isFormGroupValid]="formGroupWrapper.formGroup.valid"
+  ></app-dynamic-form-control>
+</fieldset>

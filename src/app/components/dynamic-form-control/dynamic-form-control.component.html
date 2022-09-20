@@ -1,0 +1,24 @@
+<label [for]="formControlWrapper.name">{{ formControlWrapper.label }}</label>
+<ngContainer [ngSwitch]="formControlWrapper.type">
+  <select
+    *ngSwitchCase="'select'"
+    [id]="formControlWrapper.name"
+    [title]="formControlWrapper.tooltip"
+    [formControl]="formControlWrapper.formControl"
+  >
+    <option
+      *ngFor="let option of formControlWrapper.options"
+      [value]="option.value"
+    >
+      {{ option.value }}
+    </option></select
+  ><input
+    *ngSwitchDefault
+    [id]="formControlWrapper.name"
+    [type]="formControlWrapper.type"
+    [title]="formControlWrapper.tooltip"
+    [formControl]="formControlWrapper.formControl"
+    [hidden]="getIsHidden()"
+  />
+</ngContainer>
+<br /><br />
